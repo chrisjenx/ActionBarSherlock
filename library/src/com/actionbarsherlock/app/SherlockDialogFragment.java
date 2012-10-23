@@ -8,61 +8,74 @@ import com.actionbarsherlock.view.MenuItem;
 
 import android.app.Activity;
 import android.support.v4.app.DialogFragment2;
-import android.support.v4.app._ActionBarSherlockTrojanHorse.OnCreateOptionsMenuListener;
-import android.support.v4.app._ActionBarSherlockTrojanHorse.OnOptionsItemSelectedListener;
-import android.support.v4.app._ActionBarSherlockTrojanHorse.OnPrepareOptionsMenuListener;
+import android.support.v4.app.Watson.OnCreateOptionsMenuListener;
+import android.support.v4.app.Watson.OnOptionsItemSelectedListener;
+import android.support.v4.app.Watson.OnPrepareOptionsMenuListener;
 
-public class SherlockDialogFragment extends DialogFragment2 implements OnCreateOptionsMenuListener, OnPrepareOptionsMenuListener, OnOptionsItemSelectedListener {
+public class SherlockDialogFragment extends DialogFragment2 implements OnCreateOptionsMenuListener,
+        OnPrepareOptionsMenuListener, OnOptionsItemSelectedListener
+{
     private SherlockFragmentActivity mActivity;
 
-    public SherlockFragmentActivity getSherlockActivity() {
+    public SherlockFragmentActivity getSherlockActivity()
+    {
         return mActivity;
     }
 
     @Override
-    public void onAttach(Activity activity) {
-        if (!(activity instanceof SherlockFragmentActivity)) {
-            throw new IllegalStateException(getClass().getSimpleName() + " must be attached to a SherlockFragmentActivity.");
+    public void onAttach(Activity activity)
+    {
+        if (!(activity instanceof SherlockFragmentActivity))
+        {
+            throw new IllegalStateException(getClass().getSimpleName()
+                    + " must be attached to a SherlockFragmentActivity.");
         }
-        mActivity = (SherlockFragmentActivity)activity;
+        mActivity = (SherlockFragmentActivity) activity;
 
         super.onAttach(activity);
     }
 
     @Override
-    public void onDetach() {
+    public void onDetach()
+    {
         mActivity = null;
         super.onDetach();
     }
 
     @Override
-    public final void onCreateOptionsMenu(android.view.Menu menu, android.view.MenuInflater inflater) {
+    public final void onCreateOptionsMenu(android.view.Menu menu, android.view.MenuInflater inflater)
+    {
         onCreateOptionsMenu(new MenuWrapper(menu), mActivity.getSupportMenuInflater());
     }
 
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        //Nothing to see here.
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
+    {
+        // Nothing to see here.
     }
 
     @Override
-    public final void onPrepareOptionsMenu(android.view.Menu menu) {
+    public final void onPrepareOptionsMenu(android.view.Menu menu)
+    {
         onPrepareOptionsMenu(new MenuWrapper(menu));
     }
 
     @Override
-    public void onPrepareOptionsMenu(Menu menu) {
-        //Nothing to see here.
+    public void onPrepareOptionsMenu(Menu menu)
+    {
+        // Nothing to see here.
     }
 
     @Override
-    public final boolean onOptionsItemSelected(android.view.MenuItem item) {
+    public final boolean onOptionsItemSelected(android.view.MenuItem item)
+    {
         return onOptionsItemSelected(new MenuItemWrapper(item));
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        //Nothing to see here.
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        // Nothing to see here.
         return false;
     }
 }
