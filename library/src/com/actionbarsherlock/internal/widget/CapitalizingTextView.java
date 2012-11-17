@@ -38,10 +38,10 @@ public class CapitalizingTextView extends TextView {
                     setText(text.toString().toUpperCase(Locale.ROOT));
                 } catch (NoSuchFieldError e) {
                     //Some manufacturer broke Locale.ROOT. See #572.
-                    setText(text.toString().toUpperCase());
+                    setText(text.toString().toUpperCase(Locale.getDefault()));
                 }
             } else {
-                setText(text.toString().toUpperCase());
+                setText(text.toString().toUpperCase(Locale.getDefault()));
             }
         } else {
             setText(text);

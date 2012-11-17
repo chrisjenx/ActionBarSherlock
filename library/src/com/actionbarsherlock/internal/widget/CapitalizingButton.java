@@ -31,7 +31,7 @@ public class CapitalizingButton extends Button {
             if (IS_GINGERBREAD) {
                 setText(text.toString().toUpperCase(Locale.ROOT));
             } else {
-                setText(text.toString().toUpperCase());
+                setText(text.toString().toUpperCase(Locale.getDefault()));
             }
         } else {
             setText(text);
